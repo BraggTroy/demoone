@@ -4,12 +4,34 @@
 @border-color: #ebeef5;
 
 html{min-height: 100%;}
-body{ color: @color; padding: 0; margin: 0;}
+body{ color: @color; padding: 0; margin: 0; background: #f6f6f6;}
 ul{ padding: 0; margin: 0; list-style: none;}
 a{
   text-decoration: none; color: @color;
   &:hover {cursor: pointer; color: @theme-color;}
 }
 
+.boxSizing (@type) {
+  box-sizing: @type;
+  -webkit-box-sizing: @type;
+  -moz-box-sizing: @type;
+}
+.boxShadow (@type) {
+  -webkit-box-shadow: @type;
+  -moz-box-shadow: @type;
+  box-shadow: @type;
+}
 
+
+.border-box{
+  .boxSizing(border-box)
+}
+.box-shadow{
+  .boxShadow(0 1px 3px rgba(26, 26, 26, 0.1))
+}
+.nowrap{
+  white-space: nowrap; overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
 
